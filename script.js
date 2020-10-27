@@ -27,18 +27,18 @@ if (wantPass === true){
   for (inputPass === false; inputPass < 8 || inputPass > 128; inputPass++){
     // if (inputPass < 8 || inputPass > 128) 
     alert("Password needs to be between 8 - 128 characters");
+    var inputPass = prompt("How many characters would you like your password to be?");
   }
   
   //testing prompt
   // alert(" code is " + inputPass);
   
-  else {
-    passSymbol = confirm("Would you like symbol characters in your password?");
-    passNumber = confirm("Would you like number characters in your password?");
-    passLower = confirm("Would you like lowercase characters in your password?");
-    passUpper = confirm("Would you like uppercase characters in your password?");
+  // else {
+  //   passSymbol = confirm("Would you like symbol characters in your password?");
+  //   passNumber = confirm("Would you like number characters in your password?");
+  //   passLower = confirm("Would you like lowercase characters in your password?");
+  //   passUpper = confirm("Would you like uppercase characters in your password?");
+  // }
+  // if (!passSymbol && !passNumber && !passLower && !passUpper) {
+  //   alert("Please choose at least one type of character");
   }
-  if (!passSymbol && !passNumber && !passLower && !passUpper) {
-    alert("Please choose at least one type of character");
-  }
-}
