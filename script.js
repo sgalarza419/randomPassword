@@ -3,8 +3,7 @@ var symbolChar = ["!", "@", "#", "$", "%", "^", "&", "*", "<",">", "~"];
 var numberChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var finalPass = [" "]
-var allChar =["symbolChar", "numberChar","lowerChar","upperChar"];
+var allChar = [symbolChar , numberChar, lowerChar, upperChar];
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -30,14 +29,73 @@ if (wantPass === true){
     var inputPass = prompt("How many characters would you like your password to be?");
   }
   
-  for (allChar === false; !passSymbol && !passNumber && !passLower && !passUpper; allChar++) {
+  for (allChar === false; !symbol && !number && !lower && !upper; allChar++) {
     alert("Please choose at least one type of character");
-    var passSymbol = confirm("Would you like symbol characters in your password?");
-    var passNumber = confirm("Would you like number characters in your password?");
-    var passLower = confirm("Would you like lowercase characters in your password?");
-    var passUpper = confirm("Would you like uppercase characters in your password?");
+    var symbol = confirm("Would you like symbol characters in your password?");
+    var number = confirm("Would you like number characters in your password?");
+    var lower = confirm("Would you like lowercase characters in your password?");
+    var upper = confirm("Would you like uppercase characters in your password?");
   }
+// If all character types chosen
 
+if (lower === true && number === true && symbol === true && upper === true) {
+    var charSet = allChar;
+}
+
+// If three character types chosen
+
+else if (lower === false && number === true && symbol === true && upper === true) {
+    var charSet = numberChar + symbolChar + upperChar;
+}
+else if (lower === true && number === false && symbol === true && upper === true) {
+  var charSet = lowerChar + symbolChar + upperChar;
+}
+else if (lower === true && number === true && symbol === false && upper === true) {
+  var charSet = lowerChar + numberChar + upperChar;
+}
+else if (lower === true && number === true && symbol === true && upper === false) {
+  var charSet = lowerChar + numberChar + symbolChar;
+}
+
+// If two character types chosen
+
+else if (lower === false && number === false && symbol === true && upper === true) {
+  var charSet = symbolChar + upperChar;
+}
+else if (lower === false && number === true && symbol === true && upper === false) {
+  var charSet = symbolChar + numberChar;
+}
+else if (lower === true && number === false && symbol === true && upper === false) {
+  var charSet = symbolChar + lowerChar;
+}
+else if (lower === false && number === true && symbol === false && upper === true) {
+  var charSet = numberChar + upperChar;
+}
+else if (lower === true && number === true && symbol === false && upper === false) {
+  var charSet = numberChar + lowerChar;
+}
+else if (lower === true && number === false && symbol === false && upper === true) {
+  var charSet = upperChar + lowerChar;
+}
+
+// If one character type is selected
+
+else if (lower === false && number === false && symbol === false && upper === true) {
+  var charSet = upperChar;
+}
+else if (lower === false && number === false && symbol === true && upper === false) {
+  var charSet = symbolChar;
+}
+else if (lower === false && number === true && symbol === false && upper === false) {
+  var charSet = numberChar;
+}
+else if (lower === true && number === false && symbol === false && upper === false) {
+  var charSet = lowerChar;
+};
+
+for (var i=0; i < charSet.length; i++){
+  console.log(charSet[i]);
+}
 
   //testing prompt
   // alert(" code is " + inputPass);
