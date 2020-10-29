@@ -102,9 +102,9 @@ else if (lower === true && number === false && symbol === false && upper === fal
   var charSet = lowerChar;
 };
 
-for (var i=0; i < charSet.length; i++){
-  console.log(charSet[i]);
-}
+// for (var i=0; i < charSet.length; i++){
+//   console.log(charSet[i]);
+// }
 
 
 // this fills empty randomPassword array
@@ -114,3 +114,16 @@ for (var k = 0; k < inputPass2; k++) {
   // console.log(randomPassword);
 }
 }
+var rP = randomPassword.toString();
+// console.log(rP);
+
+
+
+// Write password to the #password input
+// function writePassword() {
+  
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+
+//   passwordText.value = password;
+// }
