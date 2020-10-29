@@ -106,17 +106,11 @@ for (var i=0; i < charSet.length; i++){
   console.log(charSet[i]);
 }
 
-// for (var i = 0; i < inputPass2; i++){
-//  randomPassword.push(Math.floor((Math.random(charSet[i])+1)*charSet.length));
-// }
 
-//  for (var j = 0; j < randomPassword.length; j++){
-//   console.log(randomPassword[j]);
-// }
-
-for (var k = 0; k < inputPass2 + 1; k++) {
-  k = Math.floor(Math.random()*charSet.length);
-  console.log(k);
+// this fills empty randomPassword array
+for (var k = 0; k < inputPass2; k++) {
+  j = Math.floor(Math.random()*charSet.length);
+  randomPassword.push(charSet[j]);
+  // console.log(randomPassword);
 }
-
 }
