@@ -4,12 +4,14 @@ var numberChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var allChar = [symbolChar , numberChar, lowerChar, upperChar];
-
+// charSet defined
+var charSet;
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -39,43 +41,43 @@ if (wantPass === true){
 // If all character types chosen
 
 if (lower === true && number === true && symbol === true && upper === true) {
-    var charSet = allChar;
+    var charSet = symbolChar.concat(numberChar,upperChar,lowerChar);
 }
 
 // If three character types chosen
 
 else if (lower === false && number === true && symbol === true && upper === true) {
-    var charSet = numberChar + symbolChar + upperChar;
+    var charSet = numberChar.concat(symbolChar, upperChar);
 }
 else if (lower === true && number === false && symbol === true && upper === true) {
-  var charSet = lowerChar + symbolChar + upperChar;
+  var charSet = lowerChar.concat(symbolChar, upperChar);
 }
 else if (lower === true && number === true && symbol === false && upper === true) {
-  var charSet = lowerChar + numberChar + upperChar;
+  var charSet = lowerChar.concat(numberChar, upperChar);
 }
 else if (lower === true && number === true && symbol === true && upper === false) {
-  var charSet = lowerChar + numberChar + symbolChar;
+  var charSet = lowerChar.concat(numberChar, symbolChar);
 }
 
 // If two character types chosen
 
 else if (lower === false && number === false && symbol === true && upper === true) {
-  var charSet = symbolChar + upperChar;
+  var charSet = symbolChar.concat(upperChar);
 }
 else if (lower === false && number === true && symbol === true && upper === false) {
-  var charSet = symbolChar + numberChar;
+  var charSet = symbolChar.concat(numberChar);
 }
 else if (lower === true && number === false && symbol === true && upper === false) {
-  var charSet = symbolChar + lowerChar;
+  var charSet = symbolChar.concat(lowerChar);
 }
 else if (lower === false && number === true && symbol === false && upper === true) {
-  var charSet = numberChar + upperChar;
+  var charSet = numberChar.concat(upperChar);
 }
 else if (lower === true && number === true && symbol === false && upper === false) {
-  var charSet = numberChar + lowerChar;
+  var charSet = numberChar.concat(lowerChar);
 }
 else if (lower === true && number === false && symbol === false && upper === true) {
-  var charSet = upperChar + lowerChar;
+  var charSet = upperChar.concat(lowerChar);
 }
 
 // If one character type is selected
@@ -96,7 +98,4 @@ else if (lower === true && number === false && symbol === false && upper === fal
 for (var i=0; i < charSet.length; i++){
   console.log(charSet[i]);
 }
-
-  //testing prompt
-  // alert(" code is " + inputPass);
-  }
+}
