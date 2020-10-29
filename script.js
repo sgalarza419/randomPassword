@@ -4,8 +4,11 @@ var numberChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var allChar = [symbolChar , numberChar, lowerChar, upperChar];
+var randomPassword = [];
+
 // charSet defined
 var charSet;
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -30,7 +33,10 @@ if (wantPass === true){
     alert("Password needs to be between 8 - 128 characters");
     var inputPass = prompt("How many characters would you like your password to be?");
   }
+  var inputPass2 = Number(inputPass);
   
+  // console.log(inputPass2);
+
   for (allChar === false; !symbol && !number && !lower && !upper; allChar++) {
     alert("Please choose at least one type of character");
     var symbol = confirm("Would you like symbol characters in your password?");
@@ -38,6 +44,7 @@ if (wantPass === true){
     var lower = confirm("Would you like lowercase characters in your password?");
     var upper = confirm("Would you like uppercase characters in your password?");
   }
+
 // If all character types chosen
 
 if (lower === true && number === true && symbol === true && upper === true) {
@@ -47,7 +54,7 @@ if (lower === true && number === true && symbol === true && upper === true) {
 // If three character types chosen
 
 else if (lower === false && number === true && symbol === true && upper === true) {
-    var charSet = numberChar.concat(symbolChar, upperChar);
+  var charSet = numberChar.concat(symbolChar, upperChar);
 }
 else if (lower === true && number === false && symbol === true && upper === true) {
   var charSet = lowerChar.concat(symbolChar, upperChar);
@@ -98,4 +105,18 @@ else if (lower === true && number === false && symbol === false && upper === fal
 for (var i=0; i < charSet.length; i++){
   console.log(charSet[i]);
 }
+
+// for (var i = 0; i < inputPass2; i++){
+//  randomPassword.push(Math.floor((Math.random(charSet[i])+1)*charSet.length));
+// }
+
+//  for (var j = 0; j < randomPassword.length; j++){
+//   console.log(randomPassword[j]);
+// }
+
+for (var k = 0; k < inputPass2 + 1; k++) {
+  k = Math.floor(Math.random()*charSet.length);
+  console.log(k);
+}
+
 }
